@@ -1,6 +1,6 @@
 
 import { call, put } from "redux-saga/effects";
-import {transactionList,transactionListSuccess,transactionListError} from '../action/action'
+import {transactionListSuccess} from '../action/action'
 import axios from 'axios';
 
 const getPublicAPI = (path) => {
