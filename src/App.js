@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { connect } from "react-redux";
+import { transactionList } from "./store/action/action";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 function App() {
+  const _transactionList = useSelector((state) => state?.transactionReducer?.transactionList);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(transactionList());
+  }, []);
+
+  useEffect(() => {
+    console.log(_transactionList);
+  }, [_transactionList]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      redux demo
+      <br />
+      <br />
+      {JSON.stringify(_transactionList)}
     </div>
   );
 }
