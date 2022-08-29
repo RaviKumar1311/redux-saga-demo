@@ -13,4 +13,5 @@ export const transactionListSuccess = (values) =>({
 export const transactionListError = (values) => ({
     type:TRANSACTION_LIST_ERROR,
     values
-})
+});
+
